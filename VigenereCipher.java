@@ -1,4 +1,5 @@
-public class VigenereCipher {
+//The class implements a number of classic ciphers based off these cryptographic principles,but it uses a keyword to shift the text.
+public class VignereCipher {
 public static void main(String[] args) {
 
         if (args.length != 3) {
@@ -61,7 +62,7 @@ public static void main(String[] args) {
 
     public static boolean isValid(String input) {
 
-        return input.matches("^[a-z]+$");
+        return input.matches("^[a-z]*$");
 
     }
 
@@ -70,6 +71,10 @@ public static void main(String[] args) {
  */
 
     public static String encode(String input, String keyword) {
+
+        if (keyword.isEmpty()) {
+            return input; // If the keyword is empty, no encoding is needed
+        }
 
         StringBuilder ciphertext = new StringBuilder();
 
@@ -110,6 +115,10 @@ public static void main(String[] args) {
  
 
     public static String decode(String input, String keyword) {
+
+        if (keyword.isEmpty()) {
+            return input; // If the keyword is empty, no decoding is needed
+        }
 
         StringBuilder plaintext = new StringBuilder();
 
