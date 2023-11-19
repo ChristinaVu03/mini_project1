@@ -1,4 +1,5 @@
-public class CaesarCipher {
+//The class implements a number of classic ciphers based off these cryptographic principles
+public class CaeserCipher {
 public static void main(String[] args) {
         if (args.length != 2) {
             System.err.println("Incorrect number of parameters"); //print error if not enough parameters entered
@@ -6,10 +7,13 @@ public static void main(String[] args) {
         } 
 
  
-
         String operation = args[0]; 
         String input = args[1]; 
-
+        
+        if (input.isEmpty()) {
+            System.out.println("Result: " + input); // For empty string, no change is needed
+            System.exit(0);
+        }
  
 
         if (!operation.equals("encode") && !operation.equals("decode")) {
